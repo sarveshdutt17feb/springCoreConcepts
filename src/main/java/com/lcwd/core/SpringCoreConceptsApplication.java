@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 import test.Test;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.lcwd.core","test",""})
+@ComponentScan(basePackages = {"com.lcwd.core","test",})
 public class SpringCoreConceptsApplication {
 
 	public static void main(String[] args) {
