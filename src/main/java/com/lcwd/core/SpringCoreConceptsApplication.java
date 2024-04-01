@@ -8,9 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import test.Test;
 
 @SpringBootApplication
-//@ComponentScan(basePackages = {"",""})
+@ComponentScan(basePackages = {"com.lcwd.core","test",""})
 public class SpringCoreConceptsApplication {
 
 	public static void main(String[] args) {
@@ -23,6 +24,8 @@ public class SpringCoreConceptsApplication {
 		ApplicationContext context = SpringApplication.run(SpringCoreConceptsApplication.class);
 		Person person = context.getBean(Person.class);
 		person.playWithAnimal();
+		Test testbean = context.getBean(Test.class);
+		testbean.testing();
  	}
 
 }
