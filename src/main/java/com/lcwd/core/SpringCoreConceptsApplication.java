@@ -2,6 +2,7 @@ package com.lcwd.core;
 
 import com.lcwd.core.couple.*;
 import com.lcwd.core.scope.Pepsi;
+import com.lcwd.core.scope.Soda;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -30,13 +31,31 @@ public class SpringCoreConceptsApplication {
 
 		//Bean Scope
 		//first request for pepsi bean
-		Pepsi bean  = context.getBean(Pepsi.class);
-		System.out.println(bean);
+//		Pepsi bean  = context.getBean(Pepsi.class);
+//		System.out.println(bean);
 //		bean.drink();
 		//second request for
-		Pepsi 	bean1 = context.getBean(Pepsi.class);
-		System.out.println(bean1);
- 	}
+//		Pepsi 	bean1 = context.getBean(Pepsi.class);
+//		System.out.println(bean1);
+
+		Pepsi pepsi = 	context.getBean(Pepsi.class);
+		System.out.println(pepsi);
+		Soda soda = pepsi.getSoda();
+		System.out.println(soda);
+
+		Pepsi pepsi1 = 	context.getBean(Pepsi.class);
+		System.out.println(pepsi1);
+		Soda soda1 = pepsi.getSoda();
+		System.out.println(soda1);
+
+		Pepsi pepsi2 = 	context.getBean(Pepsi.class);
+		System.out.println(pepsi2);
+		Soda soda2 = pepsi.getSoda();
+		System.out.println(soda2);
+
+
+
+	}
 
 
 
