@@ -1,13 +1,12 @@
 package com.lcwd.core;
 
-import com.lcwd.core.couple.Animal;
-import com.lcwd.core.couple.Cat;
-import com.lcwd.core.couple.Dog;
-import com.lcwd.core.couple.Person;
+import com.lcwd.core.couple.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Primary;
 import test.Test;
 
 @SpringBootApplication
@@ -21,11 +20,16 @@ public class SpringCoreConceptsApplication {
 //		p1.playWithAnimal();
 //		Person p = new Person(animal);
 //		p.playWithAnimal();
+
 		ApplicationContext context = SpringApplication.run(SpringCoreConceptsApplication.class);
 		Person person = context.getBean(Person.class);
 		person.playWithAnimal();
 		Test testbean = context.getBean(Test.class);
 		testbean.testing();
+
+
  	}
+
+
 
 }

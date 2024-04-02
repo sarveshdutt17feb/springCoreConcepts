@@ -13,6 +13,9 @@ public class Person {
     Animal animal;
     @Autowired
     Student student;
+    @Autowired
+            @Qualifier("samosa1")
+    Samosa samosa;
     //constructor based injection (for mendatory dependency injection ) use contructor Injection
 //    @Autowired
 //    public Person(Animal animal,Student student) {
@@ -43,9 +46,10 @@ public class Person {
         System.out.println("setting student");
         this.student = student;
     }
-
+//declaring bean using @Bean annotation
     public void playWithAnimal(){
         animal.play();
         student.detail();
+        samosa.eat();
     }
 }
