@@ -1,6 +1,7 @@
 package com.lcwd.core;
 
 import com.lcwd.core.couple.*;
+import com.lcwd.core.scope.Pepsi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,14 +21,21 @@ public class SpringCoreConceptsApplication {
 //		p1.playWithAnimal();
 //		Person p = new Person(animal);
 //		p.playWithAnimal();
-
+//Application context represents spring container
 		ApplicationContext context = SpringApplication.run(SpringCoreConceptsApplication.class);
-		Person person = context.getBean(Person.class);
-		person.playWithAnimal();
-		Test testbean = context.getBean(Test.class);
-		testbean.testing();
+//		Person person = context.getBean(Person.class);
+//		person.playWithAnimal();
+//		Test testbean = context.getBean(Test.class);
+//		testbean.testing();
 
-
+		//Bean Scope
+		//first request for pepsi bean
+		Pepsi bean  = context.getBean(Pepsi.class);
+		System.out.println(bean);
+//		bean.drink();
+		//second request for
+		Pepsi 	bean1 = context.getBean(Pepsi.class);
+		System.out.println(bean1);
  	}
 
 
